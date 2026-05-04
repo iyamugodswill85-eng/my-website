@@ -1,7 +1,5 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector(".site-nav");
-const contactForm = document.querySelector(".contact-form");
-const formMessage = document.querySelector(".form-message");
 
 if (menuToggle && siteNav) {
   menuToggle.addEventListener("click", () => {
@@ -17,16 +15,5 @@ if (menuToggle && siteNav) {
         menuToggle.setAttribute("aria-expanded", "false");
       }
     });
-  });
-}
-
-if (contactForm && formMessage) {
-  contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const nameInput = contactForm.querySelector('input[name="name"]');
-    const name = nameInput && nameInput.value.trim() ? nameInput.value.trim() : "there";
-
-    formMessage.textContent = `Thanks, ${name}. Your project request is ready to turn into a real contact flow.`;
-    contactForm.reset();
   });
 }

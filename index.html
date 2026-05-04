@@ -254,26 +254,27 @@
             </p>
           </div>
 
-          <form class="contact-form">
+          <form class="contact-form" id="contact-form">
             <label>
               Your Name
-              <input type="text" name="name" placeholder="Enter your name">
+              <input type="text" name="name" placeholder="Enter your name" data-fs-field>
             </label>
             <label>
               Email Address
-              <input type="email" name="email" placeholder="Enter your email">
+              <input type="email" name="email" placeholder="Enter your email" data-fs-field>
             </label>
             <label>
               Project Type
-              <input type="text" name="project" placeholder="Website redesign, portfolio, e-commerce...">
+              <input type="text" name="project" placeholder="Website redesign, portfolio, e-commerce..." data-fs-field>
             </label>
             <label>
               Tell Us About It
-              <textarea name="message" rows="4" placeholder="Describe what you want to build"></textarea>
+              <textarea name="message" rows="4" placeholder="Describe what you want to build" data-fs-field></textarea>
             </label>
-            <button class="button button-primary" type="submit">Send Project Request</button>
-            <p class="form-note">This demo form shows a success message in the browser.</p>
-            <p class="form-message" aria-live="polite"></p>
+            <button class="button button-primary" type="submit" data-fs-submit-btn>Send Project Request</button>
+            <p class="form-note">We'll respond to your request shortly.</p>
+            <p class="form-message" aria-live="polite" data-fs-success></p>
+            <div data-fs-error></div>
           </form>
         </div>
       </section>
@@ -292,6 +293,11 @@
     </footer>
   </div>
 
+  <script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#contact-form', formId: 'xgodalkp' });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
   <script src="script.js"></script>
 </body>
 </html>
