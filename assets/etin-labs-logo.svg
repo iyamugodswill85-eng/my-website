@@ -1,0 +1,14 @@
+<svg width="900" height="320" viewBox="0 0 900 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="etinlabs-gradient" x1="212" y1="48" x2="480" y2="252" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9C2EFF"/>
+      <stop offset="0.48" stop-color="#4C27F4"/>
+      <stop offset="1" stop-color="#1183F3"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="320" rx="32" fill="white" fill-opacity="0"/>
+  <path d="M290 52C304 52 315 63 315 77V97C315 111 304 122 290 122H221C213 122 208 131 213 138L221 150C226 157 234 161 243 161H319C333 161 344 172 344 186V205C344 219 333 230 319 230H241C233 230 228 239 233 246L246 265C251 272 259 276 268 276H335L312 313H246C226 313 207 303 195 287L128 191C116 174 115 150 127 132L197 37C209 20 228 10 249 10H382L359 52H290Z" transform="translate(120 6)" fill="url(#etinlabs-gradient)"/>
+  <path d="M462 16C482 16 500 26 511 43L543 93C554 110 555 131 546 149L492 252C487 261 494 272 505 272H630L607 313H482C462 313 444 303 433 286L421 269C414 259 413 246 418 236L489 76C494 65 487 52 475 52H450L473 16H462Z" transform="translate(120 6)" fill="#1290F7"/>
+  <text x="130" y="280" fill="#081433" font-family="Manrope, Arial, sans-serif" font-size="82" font-weight="600" letter-spacing="-2">Etin</text>
+  <text x="392" y="280" fill="#176CF5" font-family="Manrope, Arial, sans-serif" font-size="82" font-weight="600" letter-spacing="-2">Labs</text>
+</svg>
