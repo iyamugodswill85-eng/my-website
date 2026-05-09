@@ -1,14 +1,11 @@
 :root {
   --bg: #f7f2e8;
   --bg-deep: #1d1f28;
-  --panel: rgba(255, 255, 255, 0.78);
-  --panel-strong: #fff8ef;
+  --panel: rgba(255, 255, 255, 0.72);
   --text: #171717;
-  --muted: #5d5d5d;
+  --muted: #585858;
   --line: rgba(23, 23, 23, 0.08);
   --accent: #ff6f3c;
-  --accent-dark: #d74f20;
-  --accent-soft: #ffd1c2;
   --highlight: #0e7c66;
   --shadow: 0 24px 80px rgba(29, 31, 40, 0.12);
   --radius: 24px;
@@ -61,31 +58,26 @@ textarea {
   top: 0;
   z-index: 20;
   backdrop-filter: blur(16px);
-  background: rgba(255, 255, 255, 0.84);
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.9rem;
-  font-family: "Space Grotesk", sans-serif;
-  font-weight: 700;
+  flex-shrink: 0;
 }
 
-.brand-mark {
-  width: 2.7rem;
-  height: 2.7rem;
-  display: grid;
-  place-items: center;
-  border-radius: 0.9rem;
-  background: linear-gradient(135deg, var(--accent), #ffb36b);
-  color: white;
-  box-shadow: 0 14px 34px rgba(255, 111, 60, 0.32);
+.brand-logo {
+  width: min(240px, 42vw);
+  height: auto;
+  display: block;
 }
 
-.brand-text {
-  font-size: 1.05rem;
-  letter-spacing: 0.03em;
+.hero-logo {
+  width: min(360px, 100%);
+  height: auto;
+  display: block;
+  margin-bottom: 1.35rem;
+  filter: drop-shadow(0 16px 42px rgba(17, 131, 243, 0.12));
 }
 
 .site-nav {
@@ -97,16 +89,6 @@ textarea {
   background: rgba(255, 255, 255, 0.48);
   border-radius: 999px;
   box-shadow: var(--shadow);
-}
-
-.site-nav a {
-  color: var(--muted);
-  transition: color 0.2s ease;
-}
-
-.site-nav a:hover,
-.site-nav a:focus-visible {
-  color: var(--text);
 }
 
 .menu-toggle {
@@ -134,10 +116,6 @@ textarea {
   align-items: center;
   min-height: calc(100vh - 7rem);
   padding: 2rem 0 4rem;
-}
-
-.hero-copy {
-  max-width: 680px;
 }
 
 .eyebrow {
@@ -174,10 +152,18 @@ textarea {
   margin-top: 1.3rem;
 }
 
+.hero-actions,
+.services-grid,
+.testimonials-grid,
+.work-grid,
+.timeline {
+  display: grid;
+  gap: 1rem;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
   margin-top: 2rem;
 }
 
@@ -190,21 +176,11 @@ textarea {
   border-radius: 999px;
   border: 1px solid transparent;
   font-weight: 700;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
-}
-
-.button:hover,
-.button:focus-visible {
-  transform: translateY(-2px);
 }
 
 .button-primary {
   background: linear-gradient(135deg, var(--accent), #ff9d66);
   color: white;
-  box-shadow: 0 18px 36px rgba(255, 111, 60, 0.28);
 }
 
 .button-secondary {
@@ -232,18 +208,6 @@ textarea {
 .hero-stats li {
   padding: 1.2rem;
   border-radius: var(--radius-sm);
-}
-
-.hero-stats strong {
-  display: block;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1.2rem;
-  margin-bottom: 0.45rem;
-}
-
-.hero-stats span {
-  color: var(--muted);
-  font-size: 0.95rem;
 }
 
 .hero-visual {
@@ -319,7 +283,6 @@ textarea {
 
 .app-ui-accent {
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .orbit {
@@ -339,16 +302,9 @@ textarea {
   opacity: 0.55;
 }
 
-.trust-bar {
-  margin-top: -1rem;
-  padding: 1rem 1.25rem 2rem;
-  color: var(--muted);
-  text-align: center;
-  font-weight: 600;
-}
-
-.section {
-  padding: 5.5rem 0;
+.section,
+.cta-section {
+  padding: 5rem 0;
 }
 
 .section-heading {
@@ -363,27 +319,12 @@ textarea {
 
 .services-grid,
 .testimonials-grid {
-  display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.2rem;
 }
 
 .card {
   border-radius: var(--radius);
   padding: 1.5rem;
-}
-
-.service-card {
-  min-height: 220px;
-}
-
-.service-number,
-.timeline-item span,
-.project-tag {
-  display: inline-flex;
-  margin-bottom: 1rem;
-  color: var(--highlight);
-  font-weight: 700;
 }
 
 .card h3 {
@@ -394,21 +335,26 @@ textarea {
 
 .card p,
 .cta-panel p,
-.section-heading p {
+.section-heading p,
+.footer-copy p,
+.footer-links a,
+.hero-stats span {
   color: var(--muted);
   line-height: 1.8;
+}
+
+.service-number,
+.project-tag,
+.timeline-item span {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  color: var(--highlight);
+  font-weight: 700;
 }
 
 .split-layout {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  gap: 1.2rem;
-  align-items: start;
-}
-
-.work-grid,
-.timeline {
-  display: grid;
   gap: 1.2rem;
 }
 
@@ -426,14 +372,6 @@ textarea {
 
 .timeline-item {
   min-height: 220px;
-}
-
-.quote {
-  font-size: 1.05rem;
-}
-
-.cta-section {
-  padding-bottom: 6rem;
 }
 
 .cta-panel {
@@ -467,61 +405,34 @@ textarea {
   background: rgba(255, 255, 255, 0.82);
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: 2px solid rgba(255, 111, 60, 0.18);
-  border-color: var(--accent);
-}
-
-.form-note,
-.form-message {
-  font-size: 0.92rem;
-}
-
 .form-message {
   min-height: 1.4rem;
   color: var(--highlight);
   font-weight: 700;
 }
 
+.form-note,
+.form-error {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
 .site-footer {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 1rem;
-  margin: 2rem 0 3rem;
-  padding: 1.75rem 1.5rem;
-  border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  box-shadow: var(--shadow);
+  gap: 1.5rem;
+  padding: 0 0 3rem;
 }
 
 .footer-copy {
-  max-width: 560px;
-}
-
-.footer-copy p {
-  color: var(--muted);
-  line-height: 1.8;
+  max-width: 520px;
 }
 
 .footer-links {
   display: flex;
   gap: 1.25rem;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
-}
-
-.footer-links a {
-  color: var(--muted);
-  font-weight: 700;
-  transition: color 0.2s ease;
-}
-
-.footer-links a:hover,
-.footer-links a:focus-visible {
-  color: var(--text);
 }
 
 @keyframes float {
@@ -542,19 +453,14 @@ textarea {
     grid-template-columns: 1fr;
   }
 
-  .hero {
-    padding-top: 1.5rem;
-  }
-
-  .hero-visual {
-    order: -1;
-    min-height: 420px;
-  }
-
   .work-grid,
   .services-grid,
   .testimonials-grid {
     grid-template-columns: 1fr;
+  }
+
+  .site-footer {
+    flex-direction: column;
   }
 
   .project-card:first-child {
@@ -563,14 +469,14 @@ textarea {
 }
 
 @media (max-width: 760px) {
+  .menu-toggle {
+    display: inline-block;
+  }
+
   .site-header {
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 1rem;
-  }
-
-  .menu-toggle {
-    display: inline-block;
   }
 
   .site-nav {
@@ -586,26 +492,15 @@ textarea {
     display: flex;
   }
 
-  .hero h1 {
-    max-width: 100%;
-  }
-
   .hero-stats {
     grid-template-columns: 1fr;
   }
 
-  .orbit-one {
-    width: 320px;
-    height: 320px;
+  .brand-logo {
+    width: min(220px, 58vw);
   }
 
-  .orbit-two {
-    width: 420px;
-    height: 420px;
-  }
-
-  .section,
-  .cta-section {
-    padding: 4rem 0;
+  .hero-logo {
+    width: min(290px, 80vw);
   }
 }
